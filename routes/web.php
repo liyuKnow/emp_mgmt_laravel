@@ -35,11 +35,42 @@ Route::controller(EmployeeController::class)->prefix('/employees')->group(functi
     Route::get('/list', 'list');
     Route::get('/current', 'current');
     Route::get('/past', 'past');
+    Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
+    Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
+});
+
+Route::controller(EmployeeController::class)->prefix('/kin')->group(function () {
+    Route::get('/list', 'list');
+    Route::get('/current', 'current');
+    Route::get('/past', 'past');
+    Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
+    Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
+});
+
+Route::controller(EmployeeController::class)->prefix('/employee_address')->group(function () {
+    Route::get('/list', 'list');
+    Route::get('/current', 'current');
+    Route::get('/past', 'past');
+    Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
+    Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
+});
+
+Route::controller(EmployeeController::class)->prefix('/kin_address')->group(function () {
+    Route::get('/list', 'list');
+    Route::get('/current', 'current');
+    Route::get('/past', 'past');
+    Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
+    Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
+});
+
+Route::controller(EmployeeController::class)->prefix('/employee_kin')->group(function () {
+    Route::get('/list', 'list');
+    Route::get('/current', 'current');
+    Route::get('/past', 'past');
+    Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
+    Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
 });
 
 Route::get("/all_employees", [EmployeeController::class, 'list']);
 Route::get("/current", [EmployeeController::class, 'current']);
 Route::get("/past", [EmployeeController::class, 'former']);
-
-Route::get("add_employee", [EmployeeController::class, 'addEmployee']);
-Route::post("add_employee", [EmployeeController::class, 'addEmployee']);
