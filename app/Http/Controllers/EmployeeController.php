@@ -12,6 +12,11 @@ class EmployeeController extends Controller
         return view('dashboard.create_employee');
     }
 
+    function store () {
+        // validate
+        
+    }
+
     function list()
     {
         // $employees = Employee::all();
