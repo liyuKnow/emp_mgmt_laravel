@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+    function create()
+    {
+        return view('dashboard.create_employee');
+    }
+
     function list()
     {
         // $employees = Employee::all();

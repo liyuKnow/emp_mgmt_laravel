@@ -35,15 +35,15 @@
             <i class="fas fa-home mr-3"></i>
             Home
         </a>
-        <a href="/all_employees" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+        <a href="/employees/list" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
             <i class="fas fa-tachometer-alt mr-3"></i>
             All Employee
         </a>
-        <a href="/current" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
+        <a href="/employees/current" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
             <i class="fas fa-sticky-note mr-3"></i>
             Current Employee
         </a>
-        <a href="/past" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+        <a href="employees/past" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
             <i class="fas fa-table mr-3"></i>
             Past Employee
         </a>

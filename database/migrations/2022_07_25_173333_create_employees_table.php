@@ -18,6 +18,7 @@ return new class extends Migration
             $table->String('first_name');
             $table->String('middle_name');
             $table->String('last_name');
+            $table->date('employed_date');
             $table->String('emp_img');
             $table->String('job_title');
             $table->String('status');

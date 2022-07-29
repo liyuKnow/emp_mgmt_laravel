@@ -21,6 +21,7 @@ class EmployeeFactory extends Factory
             'first_name' => $this->faker->name(),
             'middle_name' => $this->faker->name(),
             'last_name' => $this->faker->name(),
+            'employed_date' => $this->faker->date(),
             'emp_img' => $this->faker->imageUrl(640, 480, 'avatar', true),
             'job_title' => $this->faker->randomElements(['Developer', 'Net Admin', 'It support', 'Systems Administrator', 'Database Administrator', 'Systems Analyst', 'Web Developer'])[0],
             'status' => $this->faker->randomElements(['active', 'former'])[0],

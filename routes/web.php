@@ -34,9 +34,15 @@ Route::get('/home', [UserController::class, 'home']);
 Route::controller(EmployeeController::class)->prefix('/employees')->group(function () {
     Route::get('/list', 'list');
     Route::get('/current', 'current');
-    Route::get('/past', 'past');
-    Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
-    Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
+    Route::get('/past', 'former');
+
+    Route::get("/create", [EmployeeController::class, 'create']);
+    Route::post("/store", [EmployeeController::class, 'store']);
+
+    Route::get("/edit", [EmployeeController::class, 'edit']);
+    Route::post("/update", [EmployeeController::class, 'update']);
+
+    Route::get("/delete", [EmployeeController::class, 'delete']);
 });
 
 Route::controller(EmployeeController::class)->prefix('/kin')->group(function () {
@@ -70,7 +76,3 @@ Route::controller(EmployeeController::class)->prefix('/employee_kin')->group(fun
     Route::get("/add_employee", [EmployeeController::class, 'addEmployee']);
     Route::post("/add_employee", [EmployeeController::class, 'addEmployee']);
 });
-
-Route::get("/all_employees", [EmployeeController::class, 'list']);
-Route::get("/current", [EmployeeController::class, 'current']);
-Route::get("/past", [EmployeeController::class, 'former']);

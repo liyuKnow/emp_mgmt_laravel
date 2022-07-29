@@ -38,9 +38,15 @@
                                     <img src="{{$employee->emp_img}}" class="rounded-[50px] h-12 w-12" />
                             </td>
                             <td class="w-1/6 text-left py-3 px-4">{{$employee->first_name}} {{$employee->last_name}}</td>
-                            <td class="w-1/6 text-left py-3 px-4">{{$employee->date_employed}}</td>
+                            <td class="w-1/6 text-left py-3 px-4">{{$employee->employed_date}}</td>
                             <td class="w-1/6 text-left py-3 px-4">{{$employee->job_title}}</td>
-                            <td class="w-1/6 text-left py-3 px-4">{{$employee->status}}</td>
+                            <td class="w-1/6 text-left py-3 px-4">
+                                @if ($employee->status == "active")
+                                    <span class="bg-green-300 text-white px-2 py-1 rounded-full">Active</span>
+                                @else
+                                    <span class="bg-red-300 text-white px-2 py-1 rounded-full">Former</span>
+                                @endif
+                            </td>
                             <td class="w-1/6 py-3 px-4">
                                 <i class="fa fa-eye text-green-400"></i>           
                                 <i class="fa fa-edit text-blue-400"></i>
