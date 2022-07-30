@@ -23,6 +23,11 @@ class EmployeeController extends Controller
         ]);
     }
 
+    function store () {
+        // validate
+        
+    }
+
     function list()
     {
         // $employees = Employee::all();

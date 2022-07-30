@@ -35,7 +35,7 @@
                 Home
             </a>
             <a href="/employees/list" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-tachometer-alt mr-3"></i>
+                <i class="fas fa-users mr-3"></i>
                 All Employee
             </a>
             <a href="/employees/current" class="flex items-center text-white py-2 pl-4 nav-item">
@@ -43,25 +43,26 @@
                 Current Employee
             </a>
             <a href="/employees/past" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-table mr-3"></i>
+                <!-- <i class="fas fa-clock"></i>  -->
+                <i class="fas fa-clock mr-3"></i>
                 Past Employee
             </a>
-            <a href="/add_employee" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-align-left mr-3"></i>
+            <a href="/employees/create" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <i class="fas fa-user-plus mr-3"></i>
                 Add Employee
             </a>
             @if(session('user') && session('user')->user_type == "admin")
-            <a href="/add_user" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-tablet-alt mr-3"></i>
+            <a href="/users/create" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <i class="fas fa-plus mr-3"></i>
                 Add User
             </a>
             @endif
             <a href="/settings" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-calendar mr-3"></i>
+                <i class="fas fa-cogs mr-3"></i>
                 Settings
             </a>
             <a href="/logout" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-cogs mr-3"></i>
+                <i class="fas fa-arrow-left mr-3"></i>
                 Logout
             </a>
         </nav>

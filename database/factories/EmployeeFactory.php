@@ -22,7 +22,7 @@ class EmployeeFactory extends Factory
             'middle_name' => $this->faker->name(),
             'last_name' => $this->faker->name(),
             'employed_date' => $this->faker->date(),
-            'emp_img' => $this->faker->imageUrl(640, 480, 'avatar', true),
+            'emp_img' => $this->faker->randomElements(['https://i.pravatar.cc/400?img=18', 'https://i.pravatar.cc/400?img=26', 'https://i.pravatar.cc/400?img=34', 'https://i.pravatar.cc/400?img=59', 'https://i.pravatar.cc/400?img=32'])[0],
             'job_title' => $this->faker->randomElements(['Developer', 'Net Admin', 'It support', 'Systems Administrator', 'Database Administrator', 'Systems Analyst', 'Web Developer'])[0],
             'status' => $this->faker->randomElements(['active', 'former'])[0],
         ];
