@@ -11,6 +11,17 @@ class EmployeeController extends Controller
     {
         return view('dashboard.create_employee');
     }
+    function store(Request $req)
+    {
+        // valiate the request
+        $this->validate($req, [
+            'first_name' => 'required|string',
+            'middle_name' => 'required|string',
+            'last_name' => 'required|string',
+            'employed_date' => 'required|date',
+            'job_title' => 'required|string',
+        ]);
+    }
 
     function list()
     {
