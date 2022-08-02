@@ -6,12 +6,12 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">
                             Total Employees</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$total_emp}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-900">{{$total_emp}}</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <i class="fas fa-calendar fa-2x text-gray-600"></i>
                     </div>
                 </div>
             </div>
@@ -24,9 +24,9 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        <div class="text-sm font-weight-bold text-success text-uppercase mb-1">
                             Total Users</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_users }}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-900">{{ $total_users }}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-users fa-2x text-gray-600"></i>
@@ -42,11 +42,11 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                        <div class="text-sm font-weight-bold text-info text-uppercase mb-1">Leave Requests
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
                             </div>
                             <div class="col">
                                 <div class="progress progress-sm mr-2">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        <i class="fas fa-clipboard-list fa-2x text-gray-600"></i>
                     </div>
                 </div>
             </div>
@@ -71,12 +71,12 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                            Pending Requests</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">
+                            Payroll</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        <i class="fas fa-comments fa-2x text-gray-600"></i>
                     </div>
                 </div>
             </div>

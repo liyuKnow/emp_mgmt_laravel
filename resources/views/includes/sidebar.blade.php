@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Home -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/home">
             <i class="fas fa-fw fa-home"></i>
             <span>Home</span></a>
     </li>
