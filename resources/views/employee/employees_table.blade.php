@@ -35,7 +35,7 @@
                         <td >{{$employee->id}}</td>
                         <td >
                                 {{-- avatar --}}
-                                <img src="{{$employee->emp_img}}" class="rounded-circle shadow-2" style="width: 120px;" />
+                                <img src="{{$employee->emp_img}}" class="rounded-circle shadow-2" style="width: 80px;" />
                         </td>
                         <td >{{$employee->first_name}} {{$employee->last_name}}</td>
                         <td >{{$employee->date_employed}}</td>
