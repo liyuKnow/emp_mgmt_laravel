@@ -15,7 +15,6 @@ class EmployeeController extends Controller
     }
     function store(Request $req)
     {
-        dd($req->all());
         // valiate the request
         $this->validate($req, [
             'first_name' => 'required|string',
@@ -33,6 +32,7 @@ class EmployeeController extends Controller
         $employee->last_name = $req->last_name;
         $employee->employed_date = $req->employed_date;
         $employee->job_title = $req->job_title;
+        $employee->salary = $req->salary;
         $employee->status = $req->status;
 
         // save the employee image 

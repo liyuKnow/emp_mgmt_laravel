@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="date" class="form-control" id="date_employed" placeholder="Date_employed">
+                        <input type="date" class="form-control" name="date_employed"  id="date_employed" placeholder="Date_employed">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="job_title" id="job_title" placeholder="Job_title">
