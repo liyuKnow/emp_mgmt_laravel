@@ -15,6 +15,7 @@ class EmployeeController extends Controller
     }
     function store(Request $req)
     {
+        dd($req->all());
         // valiate the request
         $this->validate($req, [
             'first_name' => 'required|string',
