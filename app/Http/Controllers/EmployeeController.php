@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Subcity;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
     function create()
     {
-        return view('dashboard.create_employee');
+        $subcities = Subcity::all();
+        return view('employee.add_employee')->with(['subcities', $subcities]);
     }
     function store(Request $req)
     {

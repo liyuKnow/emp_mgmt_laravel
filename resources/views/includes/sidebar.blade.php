@@ -36,6 +36,7 @@
                 <a class="collapse-item" href="/employees/list">Employees List</a>
                 <a class="collapse-item" href="/employees/current">Current Employees</a>
                 <a class="collapse-item" href="/employees/past">Former Employees</a>
+                <a class="collapse-item" href="/employees/past">Dissmiss Employee</a>
             </div>
         </div>
     </li>
