@@ -31,17 +31,22 @@ class UserController extends Controller
     function home(Request $request)
     {
         $user = session('user');
-        
+
         $employees = Employee::all();
+        $paginated_employees = Employee::paginate(5);
         $total_emp = $employees->count();
 
         $users = Employee::all();
         $total_users = $users->count();
+        // paginated users list
+        $paginated_users = User::paginate(5);
 
         if ($user) {
             return view('home.index')->with([
-                'total_emp' => $total_emp, 
-                'total_users' => $total_users
+                'total_emp' => $total_emp,
+                'paginated_employees'  => $paginated_employees,
+                'total_users' => $total_users,
+                'paginated_users' => $paginated_users
             ]);
         }
 
