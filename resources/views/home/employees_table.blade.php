@@ -10,17 +10,17 @@
                 <tr>
                     <th>#</th>
                     <th>Full Name</th>
-                    <th>Username</th>
-                    <th>Role</th>
+                    <th>Job Title</th>
+                    <th>status</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($paginated_users as $user)
+                @forelse ($paginated_employees as $employee)
                     <tr>
-                        <td>{{$user->id}}</td>
-                        <td>{{$user->first_name}} {{$user->last_name}}</td>
-                        <td>{{$user->username}}</td>
-                        <td>{{$user->user_type}}</td>
+                        <td>{{$employee->id}}</td>
+                        <td>{{$employee->first_name}} {{$employee->last_name}}</td>
+                        <td>{{$employee->job_title}}</td>
+                        <td>{{$employee->status}}</td>
                     </tr>
                 @empty
                     <tr>

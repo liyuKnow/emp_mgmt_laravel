@@ -1,7 +1,10 @@
 @extends('master')
 
 @section('content')
-    <h3>Employees List</h3>
+    <div class="d-flex justify-content-between align-items-center p-2">
+        <h3>Employees List</h3>
+        <a href="{{route('add_employee')}}" class="badge badge-pill badge-info p-2 text-center">Add New Employee</a>
+    </div>
 
     @include('employee.employees_table')
 @endsection
