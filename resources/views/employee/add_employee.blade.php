@@ -43,20 +43,21 @@
                         <input type="phone" class="form-control" name="phone_no_2" id="phone_no_2" placeholder="Phone No 2">
                     </div>
 
-                    <div class="form-group">
-                        <select name="subcity">
+                    <div class="form-group mb-2">
+                        <select name="subcity" class="form-control" >
                             <option value="">Select Subcity</option>
-                            @foreach ($subcities as $subcity)
-                                <option class="form-control" value="{{ $subcity->id }}">{{ $subcity->name }}</option>
+                            @foreach ($subCities as $subcity)
+                                <option value="{{ $subcity->id }}">{{ $subcity->name }}</option>
                             @endforeach
                         </select>
                         <input type="text" class="form-control" id="state" placeholder="State">
                     </div>
+                    
                     <div class="form-group">
                         <input type="text" class="form-control" id="zip" placeholder="Zip">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="country" placeholder="Country">
+                        <input type="number" class="form-control" id="country" placeholder="House Number">
                     </div>
                 </div>
             </div>

@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // factories
-        User::factory(50)->create();
-        Employee::factory(50)->create();
-        Kin::factory(50)->create();
+        // User::factory(50)->create();
+        // Employee::factory(50)->create();
+        // Kin::factory(50)->create();
         // seeders
         $this->call(SubCitySeeder::class);
     }

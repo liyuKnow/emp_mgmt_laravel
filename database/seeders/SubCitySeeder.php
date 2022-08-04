@@ -20,24 +20,31 @@ class SubCitySeeder extends Seeder
         $subcities =  [
             [
                 'name' => 'lideta',
+                'woredas' => 10
             ],
             [
                 'name' => 'bole',
+                'woredas' => 11
             ],
             [
                 'name' => 'gulele',
+                'woredas' => 13
             ],
             [
                 'name' => 'cherkos',
+                'woredas' => 9
             ],
             [
                 'name' => 'nifasilk',
+                'woredas' => 10
             ],
             [
                 'name' => 'akaki_kality',
+                'woredas' => 8
             ],
             [
                 'name' => 'yeka',
+                'woredas' => 11
             ],
         ];
 

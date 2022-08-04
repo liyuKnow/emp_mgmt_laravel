@@ -10,8 +10,8 @@ class EmployeeController extends Controller
 {
     function create()
     {
-        $subcities = Subcity::all();
-        return view('employee.add_employee')->with(['subcities', $subcities]);
+        $subCities = Subcity::all();
+        return view('employee.add_employee')->with(['subCities' => $subCities]);
     }
     function store(Request $req)
     {
