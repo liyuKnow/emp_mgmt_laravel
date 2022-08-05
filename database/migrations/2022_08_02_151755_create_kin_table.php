@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('first_name');
             $table->String('last_name');
-            $table->String('emp_img');
+            $table->String('kin_img');
             $table->timestamps();
         });
     }

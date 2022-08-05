@@ -35,7 +35,7 @@
                         <td >{{$employee->id}}</td>
                         <td >
                                 {{-- avatar --}}
-                                <img src="{{$employee->emp_img}}" class="rounded-circle shadow-2" style="width: 80px;" />
+                                <img src="{{ asset($employee->emp_img) }}" class="rounded-circle shadow-2" style="width: 80px;" />
                         </td>
                         <td >{{$employee->first_name}} {{$employee->last_name}}</td>
                         <td >{{$employee->date_employed}}</td>
@@ -48,7 +48,9 @@
                             @endif
                         </td>
                         <td >
-                            <i class="fa fa-eye text-green-400"></i>           
+                            <a href={{"/employees/detail/".$employee->id}}>
+                                <i class="fa fa-eye text-green-400"></i> 
+                            </a>          
                             <i class="fa fa-edit text-blue-400"></i>
                             <i class="fa fa-trash text-red-400"></i>
                         </td>

@@ -37,9 +37,10 @@ Route::controller(EmployeeController::class)->prefix('/employees')->group(functi
     Route::get('/list', 'list');
     Route::get('/current', 'current');
     Route::get('/past', 'former');
+    Route::get('/detail/{id}', 'detail');
 
     Route::get("/create", [EmployeeController::class, 'create'])->name('add_employee');
-    Route::post("/store", [EmployeeController::class, 'store']);
+    Route::post("/store", [EmployeeController::class, 'store'])->name('store_employee');
 
     Route::get("/edit", [EmployeeController::class, 'edit']);
     Route::post("/update", [EmployeeController::class, 'update']);

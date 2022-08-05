@@ -24,15 +24,15 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4" class="text-center py-3 px-4">No users found</td>
+                        <td colspan="4" class="text-center py-3 px-4">No employees found</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
     </div>
     <!-- /.card-body -->
-    <div class="card-footer clearfix">
+    {{-- <div class="card-footer clearfix"> --}}
         {{-- laravel paginated links --}}
-        {{-- {{$paginated_users->links()}} --}}
-    </div>
+        {{-- $paginated_users->links() --}}
+    {{-- </div> --}}
 </div>

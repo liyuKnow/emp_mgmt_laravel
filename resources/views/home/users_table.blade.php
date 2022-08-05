@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mt-2">
     <div class="card-header d-flex justify-content-between text-center align-items-center">
             <h3>Users</h3>
             <a href="{{route('add_user')}}" class="badge badge-pill badge-info p-2 text-center">Add New user</a>
@@ -31,8 +31,8 @@
         </table>
     </div>
     <!-- /.card-body -->
-    <div class="card-footer clearfix">
+    {{-- <div class="card-footer clearfix"> --}}
         {{-- laravel paginated links --}}
         {{-- {{$paginated_users->links()}} --}}
-    </div>
+    {{-- </div> --}}
 </div>

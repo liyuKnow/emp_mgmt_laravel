@@ -12,7 +12,7 @@
                 <div class="card-body">
 
                     <div class="form-group">
-                        <input type="file" class="form-control" name="emp_image" >
+                        <input type="file" class="form-control" name="emp_img" >
                     </div>
 
                     <div class="form-group">
@@ -34,6 +34,13 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="salary" id="salary" placeholder="Salary">
                     </div>
+                    <div class="form-group mb-2">
+                        <select name="status" class="form-control" >
+                            <option value="">Status</option>
+                            <option value="active" selected>Active</option>
+                            <option value="former">Former</option>
+                        </select>
+                    </div>
                     
                     <p>Address Info</p>
                     <div class="form-group">
@@ -44,7 +51,7 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <select name="subcity" class="form-control" >
+                        <select name="sub_city" class="form-control" >
                             <option value="">Select Subcity</option>
                             @foreach ($subCities as $subcity)
                                 {{ $no_of_woreda = $subcity->woredas }}

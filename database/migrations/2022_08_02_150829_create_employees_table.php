@@ -22,9 +22,9 @@ return new class extends Migration
             $table->date('date_employed');
             $table->date('date_dismissed')->nullable();
             $table->String('salary');
-            $table->String('leave_status');
+            $table->String('leave_status')->default('On Duty');
             $table->String('job_title');
-            $table->String('status');
+            $table->String('status')->default('active');
             $table->timestamps();
         });
     }
