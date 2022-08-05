@@ -36,11 +36,19 @@
                     </div>
                     <div class="form-group mb-2">
                         <select name="status" class="form-control" >
+                            <option value="">Gender</option>
+                            <option value="female" selected>Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2">
+                        <select name="status" class="form-control" >
                             <option value="">Status</option>
                             <option value="active" selected>Active</option>
                             <option value="former">Former</option>
                         </select>
                     </div>
+
                     
                     <p>Address Info</p>
                     <div class="form-group">
