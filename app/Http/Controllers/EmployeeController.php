@@ -37,6 +37,7 @@ class EmployeeController extends Controller
             $employee->date_employed = $req->date_employed;
             $employee->job_title = $req->job_title;
             $employee->salary = $req->salary;
+            $employee->gender = $req->gender;
             $employee->status = $req->status;
 
             // save the employee image 
@@ -64,6 +65,7 @@ class EmployeeController extends Controller
                     $emp_address->phone_no_2 = $req->phone_no_2;
                     $emp_address->sub_city = $req->sub_city;
                     $emp_address->woreda = $req->woreda;
+                   
                     $emp_address->house_no = $req->house_no;
 
                     $emp_address->save();

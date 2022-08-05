@@ -35,7 +35,7 @@
                         <input type="text" class="form-control" name="salary" id="salary" placeholder="Salary">
                     </div>
                     <div class="form-group mb-2">
-                        <select name="status" class="form-control" >
+                        <select name="gender" class="form-control" >
                             <option value="">Gender</option>
                             <option value="female" selected>Female</option>
                             <option value="male">Male</option>
