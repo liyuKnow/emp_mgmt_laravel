@@ -15,13 +15,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        // User::truncate();
 
         $users =  [
             [
                 'first_name' => 'wonde',
                 'last_name' => 'mekonin',
                 'username' => 'wonde',
+                'gender' => 'male',
                 'password' => 'wonde@emp_mgmt',
                 'user_type' => 'admin',
             ],
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
                 'first_name' => 'elias',
                 'last_name' => 'Ibrahim',
                 'username' => 'elias',
+                'gender' => 'male',
                 'password' => 'elias@emp_mgmt',
                 'user_type' => 'employee',
             ],
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
                 'first_name' => 'kasu',
                 'last_name' => 'moges',
                 'username' => 'kasu',
+                'gender' => 'male',
                 'password' => 'kasu@emp_mgmt',
                 'user_type' => 'admin',
             ],

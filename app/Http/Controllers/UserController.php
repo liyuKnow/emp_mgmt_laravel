@@ -52,4 +52,17 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+    function list()
+    {
+        $users = User::all();
+        return view('users.index')->with([
+            'users' => $users
+        ]);
+    }
+
+    function create()
+    {
+        return view('users.add_user');
+    }
 }

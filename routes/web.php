@@ -27,11 +27,7 @@ Route::get('/logout', function () {
     return redirect('/');
 });
 
-Route::post('/add_user', [UserController::class, 'addUser'])->name('add_user');
 Route::get('/home', [UserController::class, 'home']);
-Route::post('edit_user/{id}', [UserController::class, 'editUser'])->name('edit_user');
-Route::delete('/delete_user/{id}', [UserController::class, 'deleteUser'])->name('delete_user');
-
 
 Route::controller(EmployeeController::class)->prefix('/employees')->group(function () {
     Route::get('/list', 'list');
@@ -39,11 +35,24 @@ Route::controller(EmployeeController::class)->prefix('/employees')->group(functi
     Route::get('/past', 'former');
     Route::get('/detail/{id}', 'detail');
 
-    Route::get("/create", [EmployeeController::class, 'create'])->name('add_employee');
-    Route::post("/store", [EmployeeController::class, 'store'])->name('store_employee');
+    Route::get("/create", 'create')->name('add_employee');
+    Route::post("/store", 'store')->name('store_employee');
 
-    Route::get("/edit", [EmployeeController::class, 'edit']);
-    Route::post("/update", [EmployeeController::class, 'update']);
+    Route::get("/edit", 'edit');
+    Route::post("/update", 'update');
 
-    Route::get("/delete", [EmployeeController::class, 'delete']);
+    Route::get("/delete", 'delete');
+});
+
+Route::controller(UserController::class)->prefix('/users')->group(function () {
+    Route::get('/list', 'list');
+    Route::get('/detail/{id}', 'detail');
+
+    Route::get("/create", 'create')->name('add_user');
+    Route::post("/store", 'store')->name('store_user');
+
+    Route::get("/edit", 'edit');
+    Route::post("/update", 'update');
+
+    Route::get("/delete", 'delete');
 });

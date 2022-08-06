@@ -50,9 +50,9 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Manage Users:</h6>
-                <a class="collapse-item" href="/employees/list">Users List</a>
-                <a class="collapse-item" href="/employees/current">Admin</a>
-                <a class="collapse-item" href="/employees/past">Employees</a>
+                <a class="collapse-item" href="/users/list">Users List</a>
+                <a class="collapse-item" href="/users/current">Admin</a>
+                <a class="collapse-item" href="/users/past">Users</a>
             </div>
         </div>
     </li>
