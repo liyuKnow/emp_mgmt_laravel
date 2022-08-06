@@ -101,4 +101,42 @@ class UserController extends Controller
             return redirect('/');
         }
     }
+
+    function edit(Request $req, $id)
+    {
+        if ($req->session()->has('user')) {
+            $user = User::find($id);
+            return view('users.edit_user')->with([
+                'user' => $user
+            ]);
+        } else {
+            return redirect('/');
+        }
+    }
+
+    function update(Request $req)
+    {
+        if ($req->session()->has('user')) {
+
+            $updatedUser = User::where("id", $req->id)->update($req->except('_token', 'confirm_password'));
+
+            if ($updatedUser) {
+                return redirect('/users/list');
+            }
+        } else {
+            return redirect('/');
+        }
+    }
+
+
+    function delete(Request $req, $id)
+    {
+        if ($req->session()->has('user')) {
+            $user = User::find($id);
+            $user->delete();
+            return redirect('/users/list');
+        } else {
+            return redirect('/');
+        }
+    }
 }

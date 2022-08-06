@@ -51,8 +51,8 @@ Route::controller(UserController::class)->prefix('/users')->group(function () {
     Route::get("/create", 'create')->name('add_user');
     Route::post("/store", 'store')->name('store_user');
 
-    Route::get("/edit", 'edit');
+    Route::get("/edit/{id}", 'edit');
     Route::post("/update", 'update');
 
-    Route::get("/delete", 'delete');
+    Route::get("/delete/{id}", 'delete');
 });

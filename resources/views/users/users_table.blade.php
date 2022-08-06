@@ -41,11 +41,12 @@
                             @endif
                         </td>
                         <td >
-                            <a href={{"/users/detail/".$user->id}}>
-                                <i class="fa fa-eye text-green-400"></i> 
-                            </a>          
-                            <i class="fa fa-edit text-blue-400"></i>
-                            <i class="fa fa-trash text-red-400"></i>
+                            <a href={{"/users/edit/".$user->id}}>
+                                <i class="fa fa-edit text-blue-400"></i>
+                            </a> 
+                            <a href={{"/users/delete/".$user->id}}>
+                                <i class="fa fa-trash text-red-400"></i>
+                            </a>      
                         </td>
                     </tr>
                 @endforeach
