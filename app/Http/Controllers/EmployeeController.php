@@ -17,7 +17,7 @@ class EmployeeController extends Controller
     }
     function store(Request $req)
     {
-        if($req->session()->has('user')) {
+        if ($req->session()->has('user')) {
             // valiate the request
             // $this->validate($req, [
             //     'first_name' => 'required|string',
@@ -43,12 +43,12 @@ class EmployeeController extends Controller
             // save the employee image 
             if ($req->hasFile('emp_img')) {
                 // rename image
-                $newImageName = time() . '-' . $req->first_name . '.' . $req->emp_img->extension() ;
+                $newImageName = time() . '-' . $req->first_name . '.' . $req->emp_img->extension();
                 // upload image
                 $req->emp_img->move(public_path('uploads/images/employees/'), $newImageName);
 
 
-                $employee->emp_img = 'uploads/images/employees/'.$newImageName;
+                $employee->emp_img = 'uploads/images/employees/' . $newImageName;
             } else {
                 $employee->emp_img = 'uploads/images/employees/default.png';
             }
@@ -56,8 +56,8 @@ class EmployeeController extends Controller
             // dd($employee);
             if ($employee->save()) {
 
-                
-                if ($employee->id){
+
+                if ($employee->id) {
                     $emp_address = new EmployeeAddress();
 
                     $emp_address->employee_id = $employee->id;
@@ -65,23 +65,39 @@ class EmployeeController extends Controller
                     $emp_address->phone_no_2 = $req->phone_no_2;
                     $emp_address->sub_city = $req->sub_city;
                     $emp_address->woreda = $req->woreda;
-                   
+
                     $emp_address->house_no = $req->house_no;
 
                     $emp_address->save();
 
                     $kin = new Kin();
-                    
-                    $kin->first_name = $req->first_name;
-                    
 
+                    $kin->first_name = $req->kin_first_name;
+                    $kin->last_name = $req->kin_last_name;
+
+                    if ($req->hasFile('kin_img')) {
+                        // rename image
+                        $kinImageName = time() . '-' . $req->kin_first_name . '.' . $req->kin_img->extension();
+                        // upload image
+                        $req->kin_img->move(public_path('uploads/images/kins/'), $kinImageName);
+
+
+                        $kin->kin_img = 'uploads/images/kins/' . $newImageName;
+                    } else {
+                        $kin->kin_img = 'uploads/images/kins/default.png';
+                    }
+
+                    if ($kin->save()) {
+                        return redirect()->route('employee.index')->with('success', 'Employee created successfully');
+                    }
+                } else {
+                    return redirect()->route('employee.index')->with('error', 'Employee not created');
                 }
 
                 // redirect to employees list
                 return redirect('/employees/list');
             }
         }
-
     }
 
     function list()
@@ -92,7 +108,8 @@ class EmployeeController extends Controller
         return view('employee.index', ['employees' => $employees, 'page_title' => 'Employees']);
     }
 
-    function detail ($id) {
+    function detail($id)
+    {
         $employee = Employee::find($id);
 
         return view('employee.detail')->with([

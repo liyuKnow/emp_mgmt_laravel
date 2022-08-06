@@ -35,6 +35,16 @@
                     <!-- Nested Row within Card Body -->
                     <div class="row">
                         <div class="col-lg-12">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    There were some errors with your request.
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Login</h1>

@@ -94,6 +94,21 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAttendance"
+            aria-expanded="true" aria-controls="collapseAttendance">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Attendance</span>
+        </a>
+        <div id="collapseAttendance" class="collapse" aria-labelledby="headingAttendance"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom attendance:</h6>
+                <a class="collapse-item" href="utilities-color.html">Colors</a>
+            </div>
+        </div>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 

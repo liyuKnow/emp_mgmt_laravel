@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         // Kin::factory(50)->create();
         // seeders
         $this->call(SubCitySeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
