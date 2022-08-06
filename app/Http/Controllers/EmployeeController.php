@@ -34,14 +34,14 @@ class EmployeeController extends Controller
             // create a new employee
             $employee = new Employee;
 
-            $employee->first_name = $req->first_name;
-            $employee->middle_name = $req->middle_name;
-            $employee->last_name = $req->last_name;
+            $employee->first_name = ucfirst($req->first_name);
+            $employee->middle_name = ucfirst($req->middle_name);
+            $employee->last_name = ucfirst($req->last_name);
             $employee->date_employed = $req->date_employed;
             $employee->job_title = $req->job_title;
             $employee->salary = $req->salary;
-            $employee->gender = $req->gender;
-            $employee->status = $req->status;
+            $employee->gender = ucfirst($req->gender);
+            $employee->status = ucfirst($req->status);
 
             // save the employee image 
             if ($req->hasFile('emp_img')) {
@@ -97,8 +97,8 @@ class EmployeeController extends Controller
 
                     $kin = new Kin();
 
-                    $kin->first_name = $req->kin_first_name;
-                    $kin->last_name = $req->kin_last_name;
+                    $kin->first_name = ucfirst($req->kin_first_name);
+                    $kin->last_name = ucfirst($req->kin_last_name);
 
                     if ($req->hasFile('kin_img')) {
                         // rename image
@@ -127,8 +127,8 @@ class EmployeeController extends Controller
                         $employee_kin = new EmployeeKin();
                         $employee_kin->employee_id = $employee->id;
                         $employee_kin->kin_id = $kin->id;
-                        // $employee_kin->kin_relationship = $req->kin_relationship;
-                        $employee_kin->kin_relationship = "father";
+                        $employee_kin->kin_relationship = $req->kin_relationship;
+                        // $employee_kin->kin_relationship = "father";
 
                         $employee_kin->save();
                         //  ->kin()->attach($kin->id);
