@@ -65,4 +65,40 @@ class UserController extends Controller
     {
         return view('users.add_user');
     }
+
+    function store(Request $req)
+    {
+        if ($req->session()->has('user')) {
+            // valiate the request
+            $this->validate($req, [
+                'first_name' => 'required|string',
+                'last_name' => 'required|string',
+                'username' => 'required|string',
+                'password' => 'required|string',
+                'gender' => 'required|string',
+                'user_type' => 'required|string'
+            ]);
+
+            // create a new user
+            $user = new User;
+
+            $user->first_name = $req->first_name;
+            $user->last_name = $req->last_name;
+            $user->username = $req->username;
+            $user->password = Hash::make($req->password);
+            $user->gender = $req->gender;
+            $user->user_type = $req->user_type;
+
+
+            // dd($employee);
+            if ($user->save()) {
+                // redirect to employees list
+                return redirect('/users/list');
+            }
+        } else {
+            // session flash error message
+            // Session::flash('error', 'You are not authorized to perform this action');
+            return redirect('/');
+        }
+    }
 }
