@@ -96,13 +96,22 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <img src="{{ asset($employee_id->employee_id_image) }}" alt="employee image" style="width:380px; height:230px" class="img-fluid">
-                        <p>Id Type</p>
-                        <h6>{{ $employee_id->employee_id_type}}</h6>
-                        <p>In No</p>
-                        <h6>{{ $employee_id->employee_id_no }}</h6>
+                        <img src="{{ asset($kin->kin_img) }}" alt="employee image" style="width:380px; height:230px" class="img-fluid">
+                        <p>Full Name</p>
+                        <h6>{{ $kin->first_name}} {{ $kin->last_name }}</h6>
                     </div>
-                    <div class="col-md-6 col-sm-12">Kin adress</div>
+                    <div class="col-md-6 col-sm-12">
+                        <p>Phone No 1</p>
+                        <h6>{{ $kin_address->phone_no_1 }}</h6>
+                        <p>Phone No 2</p>
+                        <h6>{{ $kin_address->phone_no_2 }}</h6>
+                        <p>Sub City</p>
+                        <h6>{{ $kin_address->sub_city}}</h6>
+                        <p>Woreda</p>
+                        <h6>{{ $kin_address->woreda }}</h6>
+                        <p>House No</p>
+                        <h6>{{ $kin_address->house_no }}</h6>
+                    </div>
                 </div>
             </div>
         </div>
