@@ -13,6 +13,7 @@
                         <th>Full Name</th>
                         <th>Username</th>
                         <th>User Type</th>
+                        <th>Gender</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

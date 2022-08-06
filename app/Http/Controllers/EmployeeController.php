@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\EmployeeAddress;
+use App\Models\EmployeeId;
+use App\Models\EmployeeKin;
 use App\Models\Kin;
+use App\Models\KinAddress;
 use App\Models\Subcity;
 use Illuminate\Http\Request;
 
@@ -70,6 +73,28 @@ class EmployeeController extends Controller
 
                     $emp_address->save();
 
+                    // save employee id
+                    $emp_id = new EmployeeId();
+
+                    $emp_id->employee_id = $employee->id;
+                    $emp_id->employee_id_no = $req->employee_id_no;
+                    $emp_id->employee_id_type = $req->employee_id_type;
+                    if ($req->hasFile('id_img')) {
+                        // rename image
+                        $idImageName = time() . '-' . $req->first_name . '.' . $req->id_img->extension();
+                        // upload image
+                        $req->id_img->move(public_path('uploads/images/ids/'), $idImageName);
+
+
+                        $emp_id->employee_id_image = 'uploads/images/ids/' . $newImageName;
+                    } else {
+                        $emp_id->employee_id_image = 'uploads/images/ids/default.png';
+                    }
+
+                    $emp_id->save();
+
+                    // save kin details
+
                     $kin = new Kin();
 
                     $kin->first_name = $req->kin_first_name;
@@ -88,7 +113,27 @@ class EmployeeController extends Controller
                     }
 
                     if ($kin->save()) {
-                        return redirect()->route('employee.index')->with('success', 'Employee created successfully');
+                        // save kin address
+                        $kin_address = new KinAddress();
+                        $kin_address->kin_id = $kin->id;
+                        $kin_address->phone_no_1 = $req->kin_phone_no_1;
+                        $kin_address->phone_no_2 = $req->kin_phone_no_2;
+                        $kin_address->sub_city = $req->kin_subcity;
+                        $kin_address->woreda = $req->kin_woreda;
+                        $kin_address->house_no = $req->kin_house_no;
+                        $kin_address->save();
+
+                        // save employee kin relation
+                        $employee_kin = new EmployeeKin();
+                        $employee_kin->employee_id = $employee->id;
+                        $employee_kin->kin_id = $kin->id;
+                        // $employee_kin->kin_relationship = $req->kin_relationship;
+                        $employee_kin->kin_relationship = "father";
+
+                        $employee_kin->save();
+                        //  ->kin()->attach($kin->id);
+
+                        return redirect('/home')->with('success', 'Employee created successfully');
                     }
                 } else {
                     return redirect()->route('employee.index')->with('error', 'Employee not created');
@@ -128,5 +173,24 @@ class EmployeeController extends Controller
         // paginated list
         $employees = Employee::where('status', '=', 'former')->get();
         return view('employee.index', ['employees' => $employees, 'page_title' => 'Former Employees']);
+    }
+
+    function edit($id)
+    {
+        $employee = Employee::find($id);
+        $subCities = Subcity::all();
+        return view('employee.edit_employee')->with([
+            'employee' => $employee,
+            'subCities' => $subCities
+        ]);
+    }
+
+    function delete($id)
+    {
+        $employees = Employee::find($id);
+        return view('employee.delete_employee')->with([
+            'employees' => $employees,
+            'page_title' => 'Delete Employee'
+        ]);
     }
 }

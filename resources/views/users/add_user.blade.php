@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-info text-white">
                     Personal Info
                 </div>
                 <div class="card-body">

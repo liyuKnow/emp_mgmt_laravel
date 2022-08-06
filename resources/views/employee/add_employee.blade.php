@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-info text-white">
                     Personal Info
                 </div>
                 <div class="card-body">
@@ -79,8 +79,33 @@
         </div>
         <div class="col-md-6 col-sm-12">
             <div class="card">
-                <div class="card-header">
-                    Personal Info
+                <div class="card-header bg-info text-white">
+                    Employees Id Info
+                </div>
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <input type="file" class="form-control" name="id_img"  id="" placeholder="First Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="employee_id_no" id="first_name" placeholder="Employee Id Number">
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <select name="employee_id_type" class="form-control" >
+                            <option value="">Id Type</option>
+                            <option value="national" selected>National</option>
+                            <option value="passport">Passport</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header mb-4 bg-info text-white">
+                    Kins Personal Info
                 </div>
                 <div class="card-body">
 
@@ -95,6 +120,17 @@
                         <input type="text" class="form-control" name="kin_last_name"  id="last_name" placeholder="Last Name">
                     </div>
                     
+                    <div class="form-group mb-2">
+                        <select name="kin_relationship" class="form-control" >
+                            <option value="">Kin Relationship</option>
+                            <option value="father" selected>Father</option>
+                            <option value="mother">Mother</option>
+                            <option value="sister">Sister</option>
+                            <option value="brother">Brother</option>
+                            <option value="aunt">Aunt</option>
+                            <option value="uncle">Uncle</option>
+                        </select>
+                    </div>
                     <p>Address Info</p>
                     <div class="form-group">
                         <input type="phone" class="form-control" name="kin_phone_no_1" id="phone_no_1" placeholder="Phone No">

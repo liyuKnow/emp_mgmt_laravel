@@ -46,7 +46,8 @@ Route::controller(EmployeeController::class)->prefix('/employees')->group(functi
 
 Route::controller(UserController::class)->prefix('/users')->group(function () {
     Route::get('/list', 'list');
-    Route::get('/detail/{id}', 'detail');
+    Route::get('/admins', 'admin');
+    Route::get('/employees', 'employee');
 
     Route::get("/create", 'create')->name('add_user');
     Route::post("/store", 'store')->name('store_user');

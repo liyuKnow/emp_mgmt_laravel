@@ -36,7 +36,7 @@ class UserController extends Controller
         $paginated_employees = Employee::paginate(5);
         $total_emp = $employees->count();
 
-        $users = Employee::all();
+        $users = User::all();
         $total_users = $users->count();
         // paginated users list
         $paginated_users = User::paginate(5);
@@ -56,6 +56,22 @@ class UserController extends Controller
     function list()
     {
         $users = User::all();
+        return view('users.index')->with([
+            'users' => $users
+        ]);
+    }
+
+    function admin()
+    {
+        $users = User::where('user_type', 'admin')->get();
+        return view('users.index')->with([
+            'users' => $users
+        ]);
+    }
+
+    function employee()
+    {
+        $users = User::where('user_type', 'employee')->get();
         return view('users.index')->with([
             'users' => $users
         ]);
