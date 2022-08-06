@@ -156,9 +156,21 @@ class EmployeeController extends Controller
     function detail($id)
     {
         $employee = Employee::find($id);
+        $employee_address = EmployeeAddress::where('employee_id', $id)->first();
+        $employee_id = EmployeeId::where('employee_id', $id)->first();
+
+        $employee_kin = EmployeeKin::where('employee_id', $id)->first();
+        $employee_kin_id = $employee_kin->kin_id;
+
+        $kin = Kin::find($employee_kin_id);
+        $kin_address = KinAddress::where('kin_id', $employee_kin_id)->first();
 
         return view('employee.detail')->with([
-            'employee' => $employee
+            'employee' => $employee,
+            'employee_address' => $employee_address,
+            'employee_id' => $employee_id,
+            'kin' => $kin,
+            'kin_address' => $kin_address,
         ]);
     }
 
